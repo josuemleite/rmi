@@ -27,6 +27,8 @@ public class Client {
             System.out.println(calc.toHexadecimal(10));
             System.out.println(calc.fromBinary("11111111"));
             System.out.println(calc.fromHexadecimal("1A"));
+            System.out.println(calc.binaryToHexadecimal("11111111"));
+            System.out.println(calc.hexadecimalToBinary("FF"));
 
             List<String> lastOperations = calc.lastOperations(9);
             for (String operation : lastOperations) {

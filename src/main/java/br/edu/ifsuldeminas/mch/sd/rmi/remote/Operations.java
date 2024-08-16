@@ -31,6 +31,10 @@ public interface Operations extends Remote {
 
     Number fromHexadecimal(String hex) throws RemoteException;
 
+    String binaryToHexadecimal(String binary) throws RemoteException;
+
+    String hexadecimalToBinary(String hex) throws RemoteException;
+
     List<String> lastOperations(int howMany) throws RemoteException;
 
     List<String> lastOperations() throws RemoteException;

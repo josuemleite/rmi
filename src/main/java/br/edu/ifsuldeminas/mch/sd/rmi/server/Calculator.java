@@ -111,10 +111,25 @@ public class Calculator implements Operations {
         return result;
     }
 
+    @Override
+    public String binaryToHexadecimal(String binary) throws RemoteException {
+        Number decimal = fromBinary(binary);
+        log(binary, "binaryToHexadecimal", decimal.toString());
+        return toHexadecimal(decimal);
+    }
+
+    @Override
+    public String hexadecimalToBinary(String hex) throws RemoteException {
+        int decimal = Integer.parseInt(hex, 16);
+        String binary = Integer.toBinaryString(decimal);
+        log(hex, "hexadecimalToBinary", binary);
+        return binary;
+    }
+
     public List<String> lastOperations(int howMany) {
         if (lastOperations.size() < howMany)
             return lastOperations();
-        return new ArrayList<String>(lastOperations.subList(
+        return new ArrayList<>(lastOperations.subList(
                 lastOperations.size() - howMany, lastOperations.size()));
     }
 
